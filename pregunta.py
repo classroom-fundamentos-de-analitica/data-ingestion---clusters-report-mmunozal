@@ -28,6 +28,7 @@ def ingest_data():
   cluster = cluster.dropna()
   palabras = palabras.dropna()
   porcentaje = porcentaje.dropna()
+  frase=datos.iloc[:,3]
   ayuda1= frase.iloc[0]+frase.iloc[1]+frase.iloc[2]+frase.iloc[3]
   ayuda2=frase.iloc[4]+frase.iloc[5]+frase.iloc[6]+frase.iloc[7]+ frase.iloc[8]
   ayuda3= frase.iloc[9]+frase.iloc[10]+frase.iloc[11]
