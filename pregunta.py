@@ -32,6 +32,7 @@ def ingest_data():
   for i in range(0,13):
     df = df.append({'cluster': int(cluster.iloc[i])}, ignore_index=True)
     df['cantidad_de_palabras_clave'].fillna(int(palabras.iloc[i]),inplace=True)
-    df['porcentaje_de_palabras_clave'].fillna(porcentaje.iloc[i],inplace=True)
+    df['porcentaje_de_palabras_clave'].fillna(porcentaje.iloc[i].rstrip(" %"),inplace=True)
+    df['porcentaje_de_palabras_clave'] = [float(str(j).replace(",", ".")) for j in df["porcentaje_de_palabras_clave"]]
   final=df
   return final
