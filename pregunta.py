@@ -28,10 +28,10 @@ def ingest_data():
   cluster = cluster.dropna()
   palabras = palabras.dropna()
   porcentaje = porcentaje.dropna()
-  df = pd.DataFrame(columns=['cluster','cantidad de palabras clave','porcentaje de palabras clave','principales palabras clave'])
+  df = pd.DataFrame(columns=['cluster','cantidad_de_palabras_clave','porcentaje_de_palabras_clave','principales_palabras_clave'])
   for i in range(0,13):
     df = df.append({'cluster': int(cluster.iloc[i])}, ignore_index=True)
-    df['cantidad de palabras clave'].fillna(int(palabras.iloc[i]),inplace=True)
-    df['porcentaje de palabras clave'].fillna(porcentaje.iloc[i],inplace=True)
+    df['cantidad_de_palabras_clave'].fillna(int(palabras.iloc[i]),inplace=True)
+    df['porcentaje_de_palabras_clave'].fillna(porcentaje.iloc[i],inplace=True)
   final=df
   return final
